@@ -123,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				E8218A5C2136660200AD89A1 /* SVProgressHUD */,
-				E8218A41213656DA00AD89A1 /* AFNetworking */,
 				E8218A17213652AE00AD89A1 /* SGBase */,
 				E8218A012136527200AD89A1 /* AppDelegate.h */,
 				E8218A022136527200AD89A1 /* AppDelegate.m */,
@@ -162,6 +161,7 @@
 		E8218A3B213656DA00AD89A1 /* SGNetTool */ = {
 			isa = PBXGroup;
 			children = (
+				E8218A41213656DA00AD89A1 /* AFNetworking */,
 				E8218A3C213656DA00AD89A1 /* SGNetStatusManager.h */,
 				E8218A3D213656DA00AD89A1 /* SGBaseNetTool.h */,
 				E8218A3E213656DA00AD89A1 /* SGNetTool.h */,
