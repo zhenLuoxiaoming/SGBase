@@ -7,7 +7,7 @@
 //
 
 #import "SGBaseNetTool.h"
-#import "AFNetworking.h"
+
 static NSMutableArray *tasks;
 
 @implementation SGBaseNetTool
