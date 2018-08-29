@@ -27,6 +27,12 @@
 		E8218A57213656DA00AD89A1 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A4C213656DA00AD89A1 /* AFNetworkReachabilityManager.m */; };
 		E8218A58213656DA00AD89A1 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A4D213656DA00AD89A1 /* AFSecurityPolicy.m */; };
 		E8218A59213656DA00AD89A1 /* SGNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A50213656DA00AD89A1 /* SGNetTool.m */; };
+		E8218A682136660200AD89A1 /* SGDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A5B2136660200AD89A1 /* SGDialog.m */; };
+		E8218A692136660200AD89A1 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A5D2136660200AD89A1 /* SVRadialGradientLayer.m */; };
+		E8218A6A2136660200AD89A1 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A602136660200AD89A1 /* SVProgressAnimatedView.m */; };
+		E8218A6B2136660200AD89A1 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A632136660200AD89A1 /* SVProgressHUD.m */; };
+		E8218A6C2136660200AD89A1 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A642136660200AD89A1 /* SVIndefiniteAnimatedView.m */; };
+		E8218A6D2136660200AD89A1 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8218A652136660200AD89A1 /* SVProgressHUD.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +78,18 @@
 		E8218A4E213656DA00AD89A1 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
 		E8218A4F213656DA00AD89A1 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		E8218A50213656DA00AD89A1 /* SGNetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNetTool.m; sourceTree = "<group>"; };
+		E8218A5B2136660200AD89A1 /* SGDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDialog.m; sourceTree = "<group>"; };
+		E8218A5D2136660200AD89A1 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		E8218A5E2136660200AD89A1 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		E8218A5F2136660200AD89A1 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		E8218A602136660200AD89A1 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		E8218A612136660200AD89A1 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		E8218A622136660200AD89A1 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		E8218A632136660200AD89A1 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		E8218A642136660200AD89A1 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		E8218A652136660200AD89A1 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		E8218A662136660200AD89A1 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		E8218A672136660200AD89A1 /* SGDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDialog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +139,7 @@
 		E8218A17213652AE00AD89A1 /* SGBase */ = {
 			isa = PBXGroup;
 			children = (
+				E8218A5A2136660200AD89A1 /* SGDialog */,
 				E8218A3B213656DA00AD89A1 /* SGNetTool */,
 				E8218A2D213652EF00AD89A1 /* SGBase.h */,
 				E8218A33213652EF00AD89A1 /* SGAppHelper.h */,
@@ -171,6 +190,33 @@
 				E8218A4F213656DA00AD89A1 /* AFHTTPSessionManager.h */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		E8218A5A2136660200AD89A1 /* SGDialog */ = {
+			isa = PBXGroup;
+			children = (
+				E8218A672136660200AD89A1 /* SGDialog.h */,
+				E8218A5B2136660200AD89A1 /* SGDialog.m */,
+				E8218A5C2136660200AD89A1 /* SVProgressHUD */,
+			);
+			path = SGDialog;
+			sourceTree = "<group>";
+		};
+		E8218A5C2136660200AD89A1 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E8218A5D2136660200AD89A1 /* SVRadialGradientLayer.m */,
+				E8218A5E2136660200AD89A1 /* SVIndefiniteAnimatedView.h */,
+				E8218A5F2136660200AD89A1 /* SVProgressHUD.h */,
+				E8218A602136660200AD89A1 /* SVProgressAnimatedView.m */,
+				E8218A612136660200AD89A1 /* SVProgressHUD-Prefix.pch */,
+				E8218A622136660200AD89A1 /* SVRadialGradientLayer.h */,
+				E8218A632136660200AD89A1 /* SVProgressHUD.m */,
+				E8218A642136660200AD89A1 /* SVIndefiniteAnimatedView.m */,
+				E8218A652136660200AD89A1 /* SVProgressHUD.bundle */,
+				E8218A662136660200AD89A1 /* SVProgressAnimatedView.h */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +279,7 @@
 				E8218A0E2136527400AD89A1 /* LaunchScreen.storyboard in Resources */,
 				E8218A0B2136527400AD89A1 /* Assets.xcassets in Resources */,
 				E8218A092136527200AD89A1 /* Main.storyboard in Resources */,
+				E8218A6D2136660200AD89A1 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,17 +293,22 @@
 				E8218A38213652F000AD89A1 /* SGBaseNavigationController.m in Sources */,
 				E8218A062136527200AD89A1 /* ViewController.m in Sources */,
 				E8218A3A213652F000AD89A1 /* UIView+SGExtension.m in Sources */,
+				E8218A682136660200AD89A1 /* SGDialog.m in Sources */,
 				E8218A54213656DA00AD89A1 /* AFHTTPSessionManager.m in Sources */,
 				E8218A52213656DA00AD89A1 /* SGNetStatusManager.m in Sources */,
 				E8218A56213656DA00AD89A1 /* AFURLRequestSerialization.m in Sources */,
 				E8218A53213656DA00AD89A1 /* AFURLResponseSerialization.m in Sources */,
 				E8218A57213656DA00AD89A1 /* AFNetworkReachabilityManager.m in Sources */,
+				E8218A6C2136660200AD89A1 /* SVIndefiniteAnimatedView.m in Sources */,
 				E8218A112136527400AD89A1 /* main.m in Sources */,
 				E8218A51213656DA00AD89A1 /* SGBaseNetTool.m in Sources */,
+				E8218A6A2136660200AD89A1 /* SVProgressAnimatedView.m in Sources */,
+				E8218A692136660200AD89A1 /* SVRadialGradientLayer.m in Sources */,
 				E8218A032136527200AD89A1 /* AppDelegate.m in Sources */,
 				E8218A39213652F000AD89A1 /* UIColor+SGExtension.m in Sources */,
 				E8218A58213656DA00AD89A1 /* AFSecurityPolicy.m in Sources */,
 				E8218A36213652F000AD89A1 /* SGAppHelper.m in Sources */,
+				E8218A6B2136660200AD89A1 /* SVProgressHUD.m in Sources */,
 				E8218A55213656DA00AD89A1 /* AFURLSessionManager.m in Sources */,
 				E8218A37213652F000AD89A1 /* SGBaseViewController.m in Sources */,
 				E8218A59213656DA00AD89A1 /* SGNetTool.m in Sources */,
