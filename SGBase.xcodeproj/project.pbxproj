@@ -122,6 +122,8 @@
 		E8218A002136527200AD89A1 /* SGBase */ = {
 			isa = PBXGroup;
 			children = (
+				E8218A5C2136660200AD89A1 /* SVProgressHUD */,
+				E8218A41213656DA00AD89A1 /* AFNetworking */,
 				E8218A17213652AE00AD89A1 /* SGBase */,
 				E8218A012136527200AD89A1 /* AppDelegate.h */,
 				E8218A022136527200AD89A1 /* AppDelegate.m */,
@@ -165,7 +167,6 @@
 				E8218A3E213656DA00AD89A1 /* SGNetTool.h */,
 				E8218A3F213656DA00AD89A1 /* SGBaseNetTool.m */,
 				E8218A40213656DA00AD89A1 /* SGNetStatusManager.m */,
-				E8218A41213656DA00AD89A1 /* AFNetworking */,
 				E8218A50213656DA00AD89A1 /* SGNetTool.m */,
 			);
 			path = SGNetTool;
@@ -197,7 +198,6 @@
 			children = (
 				E8218A672136660200AD89A1 /* SGDialog.h */,
 				E8218A5B2136660200AD89A1 /* SGDialog.m */,
-				E8218A5C2136660200AD89A1 /* SVProgressHUD */,
 			);
 			path = SGDialog;
 			sourceTree = "<group>";
