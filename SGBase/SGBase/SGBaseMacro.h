@@ -85,7 +85,7 @@
 /**
  * 加载 storyboard
  */
-#define SG_VC_STORYBOARD        (storyboardName, storyboardId) [[UIStoryboard storyboardWithName:storyboardName bundle:nil] instantiateViewControllerWithIdentifier:storyboardId]
+#define SG_VC_STORYBOARD(storyboardName, storyboardId)    [[UIStoryboard storyboardWithName:storyboardName bundle:nil] instantiateViewControllerWithIdentifier:storyboardId]
 /**
  * 获取keyWindow
  */

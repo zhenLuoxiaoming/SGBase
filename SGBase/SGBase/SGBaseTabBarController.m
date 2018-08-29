@@ -8,7 +8,6 @@
 
 #import "SGBaseTabBarController.h"
 #import "SGBase.h"
-//#import "ViewController.h"
 
 @interface SGBaseTabBarController ()
 
