@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SGBase"
-  s.version      = "0.0.2"
+  s.version      = "0.0.6"
   s.summary      = "SGBase."
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "SGBase/SGBase", "SGBase/SGBase/**/*.{h,m}"
+  s.source_files  = "SGBase/SGBase/SGNetTool/*.{h,m}","SGBase/SGBase/SGDialog/*.{h,m}", "SGBase/SGBase/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -131,6 +131,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.dependency "SVProgressHUD", "~> 2.2.5"
+  s.dependency "AFNetworking", "~> 3.2.1"
 
 end

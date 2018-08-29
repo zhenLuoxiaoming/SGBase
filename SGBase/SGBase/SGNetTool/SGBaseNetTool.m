@@ -141,7 +141,7 @@ static NSMutableArray *tasks;
     /*! 检查地址中是否有中文 */
     NSString *URLString = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
     NSURLSessionTask *sessionTask = nil;
-    sessionTask = [[self shareAFManager] PUT:URLString parameters:params headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    sessionTask = [[self shareAFManager] PUT:URLString parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSData *data = responseObject;
         NSDictionary *responseObjectDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         if (success)
@@ -156,7 +156,6 @@ static NSMutableArray *tasks;
         }
         [[self tasks] removeObject:sessionTask];
     }];
-    
     if (sessionTask)
     {
         [[self tasks] addObject:sessionTask];
