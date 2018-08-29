@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5AF82C8321368C1E00640C94 /* UITextView+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C8021368C1D00640C94 /* UITextView+SGExtension.m */; };
 		5AF82C8421368C1E00640C94 /* UITextField+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C8221368C1D00640C94 /* UITextField+SGExtension.m */; };
+		5AF82C88213691A300640C94 /* SGBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C87213691A300640C94 /* SGBaseTabBarController.m */; };
+		5AF82C8B213695B000640C94 /* UIImage+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C8A213695B000640C94 /* UIImage+SGExtension.m */; };
 		E8218A032136527200AD89A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A022136527200AD89A1 /* AppDelegate.m */; };
 		E8218A062136527200AD89A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A052136527200AD89A1 /* ViewController.m */; };
 		E8218A092136527200AD89A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8218A072136527200AD89A1 /* Main.storyboard */; };
@@ -42,6 +44,10 @@
 		5AF82C8021368C1D00640C94 /* UITextView+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+SGExtension.m"; sourceTree = "<group>"; };
 		5AF82C8121368C1D00640C94 /* UITextView+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+SGExtension.h"; sourceTree = "<group>"; };
 		5AF82C8221368C1D00640C94 /* UITextField+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SGExtension.m"; sourceTree = "<group>"; };
+		5AF82C86213691A300640C94 /* SGBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBaseTabBarController.h; sourceTree = "<group>"; };
+		5AF82C87213691A300640C94 /* SGBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBaseTabBarController.m; sourceTree = "<group>"; };
+		5AF82C89213695B000640C94 /* UIImage+SGExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SGExtension.h"; sourceTree = "<group>"; };
+		5AF82C8A213695B000640C94 /* UIImage+SGExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SGExtension.m"; sourceTree = "<group>"; };
 		E82189FE2136527200AD89A1 /* SGBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8218A012136527200AD89A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8218A022136527200AD89A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -152,6 +158,8 @@
 				E8218A33213652EF00AD89A1 /* SGAppHelper.h */,
 				E8218A2C213652EF00AD89A1 /* SGAppHelper.m */,
 				E8218A2B213652EF00AD89A1 /* SGBaseMacro.h */,
+				5AF82C86213691A300640C94 /* SGBaseTabBarController.h */,
+				5AF82C87213691A300640C94 /* SGBaseTabBarController.m */,
 				E8218A2E213652EF00AD89A1 /* SGBaseNavigationController.h */,
 				E8218A32213652EF00AD89A1 /* SGBaseNavigationController.m */,
 				E8218A2A213652EF00AD89A1 /* SGBaseViewController.h */,
@@ -164,6 +172,8 @@
 				5AF82C8221368C1D00640C94 /* UITextField+SGExtension.m */,
 				5AF82C8121368C1D00640C94 /* UITextView+SGExtension.h */,
 				5AF82C8021368C1D00640C94 /* UITextView+SGExtension.m */,
+				5AF82C89213695B000640C94 /* UIImage+SGExtension.h */,
+				5AF82C8A213695B000640C94 /* UIImage+SGExtension.m */,
 			);
 			path = SGBase;
 			sourceTree = "<group>";
@@ -303,12 +313,14 @@
 				E8218A38213652F000AD89A1 /* SGBaseNavigationController.m in Sources */,
 				E8218A062136527200AD89A1 /* ViewController.m in Sources */,
 				E8218A3A213652F000AD89A1 /* UIView+SGExtension.m in Sources */,
+				5AF82C8B213695B000640C94 /* UIImage+SGExtension.m in Sources */,
 				E8218A682136660200AD89A1 /* SGDialog.m in Sources */,
 				E8218A54213656DA00AD89A1 /* AFHTTPSessionManager.m in Sources */,
 				5AF82C8321368C1E00640C94 /* UITextView+SGExtension.m in Sources */,
 				E8218A52213656DA00AD89A1 /* SGNetStatusManager.m in Sources */,
 				E8218A56213656DA00AD89A1 /* AFURLRequestSerialization.m in Sources */,
 				E8218A53213656DA00AD89A1 /* AFURLResponseSerialization.m in Sources */,
+				5AF82C88213691A300640C94 /* SGBaseTabBarController.m in Sources */,
 				E8218A57213656DA00AD89A1 /* AFNetworkReachabilityManager.m in Sources */,
 				E8218A6C2136660200AD89A1 /* SVIndefiniteAnimatedView.m in Sources */,
 				E8218A112136527400AD89A1 /* main.m in Sources */,

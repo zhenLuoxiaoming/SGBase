@@ -13,9 +13,11 @@
 #import "UIColor+SGExtension.h"
 #import "UITextField+SGExtension.h"
 #import "UITextView+SGExtension.h"
+#import "UIImage+SGExtension.h"
 #import "SGBaseViewController.h"
 #import "SGAppHelper.h"
 #import "SGBaseNavigationController.h"
+#import "SGBaseTabBarController.h"
 #import "SGNetTool.h"
 #import "SGDialog.h"
 #endif /* SGBase_h */

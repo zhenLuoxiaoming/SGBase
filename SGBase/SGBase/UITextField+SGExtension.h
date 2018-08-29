@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface UITextField (SGExtension)<UITextFieldDelegate>
+
+/**
+ * 最多字数
+ */
 @property (nonatomic, assign)IBInspectable NSUInteger sgMaxLength;
+
+/**
+ *  PlaceHolder 字体颜色
+ */
 @property (nonatomic, strong)IBInspectable UIColor    *sgPlaceHolderColor;
+
 @end
