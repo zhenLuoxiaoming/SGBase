@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "SGBase/SGBase/SGNetTool/*.{h,m}","SGBase/SGBase/SGDialog/*.{h,m}", "SGBase/SGBase/*.{h,m}"
+  s.source_files  = "SGBase/SGBase/SGNetTool/**/*.{h,m}","SGBase/SGBase/SGDialog/*.{h,m}", "SGBase/SGBase/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -132,6 +132,5 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "SVProgressHUD", "~> 2.2.5"
-  s.dependency "AFNetworking", "~> 3.2.0"
 
 end
