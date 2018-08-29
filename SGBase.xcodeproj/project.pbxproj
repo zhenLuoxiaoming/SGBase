@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AF82C8321368C1E00640C94 /* UITextView+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C8021368C1D00640C94 /* UITextView+SGExtension.m */; };
+		5AF82C8421368C1E00640C94 /* UITextField+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C8221368C1D00640C94 /* UITextField+SGExtension.m */; };
 		E8218A032136527200AD89A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A022136527200AD89A1 /* AppDelegate.m */; };
 		E8218A062136527200AD89A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A052136527200AD89A1 /* ViewController.m */; };
 		E8218A092136527200AD89A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8218A072136527200AD89A1 /* Main.storyboard */; };
@@ -36,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5AF82C7F21368C1C00640C94 /* UITextField+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SGExtension.h"; sourceTree = "<group>"; };
+		5AF82C8021368C1D00640C94 /* UITextView+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+SGExtension.m"; sourceTree = "<group>"; };
+		5AF82C8121368C1D00640C94 /* UITextView+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+SGExtension.h"; sourceTree = "<group>"; };
+		5AF82C8221368C1D00640C94 /* UITextField+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SGExtension.m"; sourceTree = "<group>"; };
 		E82189FE2136527200AD89A1 /* SGBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8218A012136527200AD89A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8218A022136527200AD89A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +160,10 @@
 				E8218A34213652EF00AD89A1 /* UIColor+SGExtension.m */,
 				E8218A31213652EF00AD89A1 /* UIView+SGExtension.h */,
 				E8218A35213652EF00AD89A1 /* UIView+SGExtension.m */,
+				5AF82C7F21368C1C00640C94 /* UITextField+SGExtension.h */,
+				5AF82C8221368C1D00640C94 /* UITextField+SGExtension.m */,
+				5AF82C8121368C1D00640C94 /* UITextView+SGExtension.h */,
+				5AF82C8021368C1D00640C94 /* UITextView+SGExtension.m */,
 			);
 			path = SGBase;
 			sourceTree = "<group>";
@@ -295,6 +305,7 @@
 				E8218A3A213652F000AD89A1 /* UIView+SGExtension.m in Sources */,
 				E8218A682136660200AD89A1 /* SGDialog.m in Sources */,
 				E8218A54213656DA00AD89A1 /* AFHTTPSessionManager.m in Sources */,
+				5AF82C8321368C1E00640C94 /* UITextView+SGExtension.m in Sources */,
 				E8218A52213656DA00AD89A1 /* SGNetStatusManager.m in Sources */,
 				E8218A56213656DA00AD89A1 /* AFURLRequestSerialization.m in Sources */,
 				E8218A53213656DA00AD89A1 /* AFURLResponseSerialization.m in Sources */,
@@ -310,6 +321,7 @@
 				E8218A36213652F000AD89A1 /* SGAppHelper.m in Sources */,
 				E8218A6B2136660200AD89A1 /* SVProgressHUD.m in Sources */,
 				E8218A55213656DA00AD89A1 /* AFURLSessionManager.m in Sources */,
+				5AF82C8421368C1E00640C94 /* UITextField+SGExtension.m in Sources */,
 				E8218A37213652F000AD89A1 /* SGBaseViewController.m in Sources */,
 				E8218A59213656DA00AD89A1 /* SGNetTool.m in Sources */,
 			);

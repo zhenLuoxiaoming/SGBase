@@ -11,6 +11,8 @@
 #import "SGBaseMacro.h"
 #import "UIView+SGExtension.h"
 #import "UIColor+SGExtension.h"
+#import "UITextField+SGExtension.h"
+#import "UITextView+SGExtension.h"
 #import "SGBaseViewController.h"
 #import "SGAppHelper.h"
 #import "SGBaseNavigationController.h"

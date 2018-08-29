@@ -100,4 +100,86 @@
     }
     return nil;
 }
+
+- (void)addDottedLineWithDirection:(DottedLineDirection)direction
+                             color:(UIColor *)color
+                            length:(CGFloat)length
+                             space:(CGFloat)space {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    
+    shapeLayer.strokeColor = color.CGColor;
+    shapeLayer.fillColor = nil;
+    
+    shapeLayer.lineDashPattern = @[[NSNumber numberWithDouble:length],
+                                   [NSNumber numberWithDouble:space]];
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, 0, 0);
+    if (direction == DottedLineDirectionHorizontal) {
+        shapeLayer.lineWidth = CGRectGetHeight(self.frame);
+        CGPathAddLineToPoint(path, NULL, CGRectGetWidth(self.frame), 0);
+    } else {
+        shapeLayer.lineWidth = CGRectGetWidth(self.frame);
+        CGPathAddLineToPoint(path, NULL, 0, CGRectGetHeight(self.frame));
+    }
+    shapeLayer.path = path;
+    CGPathRelease(path);
+    
+    [self.layer addSublayer:shapeLayer];
+}
+
+- (void)addDottedBorderWithColor:(UIColor *)color
+                           width:(CGFloat)width
+                          length:(CGFloat)length
+                           space:(CGFloat)space {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.strokeColor = color.CGColor;
+    shapeLayer.fillColor = nil;
+    shapeLayer.lineWidth = width;
+    
+    shapeLayer.lineDashPattern = @[[NSNumber numberWithDouble:length],
+                                   [NSNumber numberWithDouble:space]];
+    shapeLayer.path = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    [self.layer addSublayer:shapeLayer];
+    
+}
+
+/***************************************** XIB属性 *************************************************/
+- (void)setSgCornerRadius:(CGFloat)sgCornerRadius{
+    self.layer.cornerRadius = sgCornerRadius;
+}
+
+- (CGFloat)sgCornerRadius{
+    return self.layer.cornerRadius;
+}
+
+- (void)setSgBorderColor:(UIColor *)sgBorderColor{
+    self.layer.borderColor = sgBorderColor.CGColor;
+}
+
+- (UIColor *)sgBorderColor{
+    CGColorRef cgColor = self.layer.borderColor;
+    if (cgColor) {
+        return [UIColor colorWithCGColor:cgColor];
+    }else{
+        return nil;
+    }
+}
+
+- (void)setSgBorderWidth:(CGFloat)sgBorderWidth{
+    self.layer.borderWidth = sgBorderWidth;
+}
+
+- (CGFloat)sgBorderWidth{
+    return self.layer.borderWidth;
+}
+
+- (void)setSgMasksToBounds:(BOOL)sgMasksToBounds{
+    self.layer.masksToBounds = sgMasksToBounds;
+}
+
+- (BOOL)sgMasksToBounds{
+    return self.layer.masksToBounds;
+}
+
 @end

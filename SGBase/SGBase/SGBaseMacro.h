@@ -17,8 +17,10 @@
 /**
  * 屏幕宽高
  */
+#define SG_SCREEN_BOUNDS     ([UIScreen mainScreen].bounds)
 #define SG_SCREEN_WIDTH      ([UIScreen mainScreen].bounds.size.width)
 #define SG_SCREEN_HEIGHT     ([UIScreen mainScreen].bounds.size.height)
+
 /**
  * StatusBar的高
  */
@@ -26,17 +28,42 @@
 /**
  * 导航栏的高度
  */
-#define SG_NAV_HEIGHT        (SG_STATUS_HEIGHT + 44)
+#define SG_NAV_HEIGHT        44
+/**
+ * 导航栏+状态栏的高度
+ */
+#define SG_NAVSTA_HEIGHT     (SG_STATUS_HEIGHT + 44)
 /**
  * 屏幕下方预留出来的高度  当设备为iphoneX时 该值为34，其他情况下均为0
  * 注：主要是针对iPhoneX，在距离iPhoneX底部布局一些UI控件时，为使得操作不被iPhoneX的横条home键遮挡需要空出来的间隙
  */
-#define SG_BOTTOM_SPACE      (SG_IS_IPHONE_X ? 34.0 : 0.0)
+#define SG_BOTTOM_SPACE     (SG_IS_IPHONE_X ? 34.0 : 0.0)
 
 /**
  * 颜色
  */
-#define SG_COLOR(R,G,B,A) [UIColor colorWithRed:(R) / 255.0 green:(G) / 255.0 blue:(B) / 255.0 alpha:A]
+#define SG_COLOR(R,G,B,A)       [UIColor colorWithRed:(R) / 255.0 green:(G) / 255.0 blue:(B) / 255.0 alpha:A]
+
+/**
+ * 16进制颜色
+ */
+#define SG_COLOR_RGB(rgbValue)  [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+/**
+ * 16进制颜色+alpha值
+ */
+#define SG_COLOR_RGB_ALPHA(rgbValue, alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
+
+/**
+ * 系统字体
+ */
+#define SG_FONT(fontSize)       [UIFont systemFontOfSize:fontSize]
+#define SG_BoldFONT(fontSize)   [UIFont boldSystemFontOfSize:fontSize]
+
+/**
+ * __weak修饰
+ */
+#define WeakSelf(type)          __weak typeof(type) weak##type = type;
 
 /*******************************************判断相关宏***************************************************/
 /**
@@ -52,6 +79,29 @@
  * 判断字符串是否为空
  */
 #define SG_IS_EMPTY_STR(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO )
+
+/*******************************************系统相关宏***************************************************/
+
+/**
+ * 加载 storyboard
+ */
+#define SG_VC_STORYBOARD        (storyboardName, storyboardId) [[UIStoryboard storyboardWithName:storyboardName bundle:nil] instantiateViewControllerWithIdentifier:storyboardId]
+/**
+ * 获取keyWindow
+ */
+#define SG_KEYWINDOW            [UIApplication sharedApplication].keyWindow
+/**
+ * 获取 plist版本号
+ */
+#define SG_BUNDLE_VERSERION     [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+/**
+ * 获取设备UUID
+ */
+#define SG_DEVICE_UUId          [[UIDevice currentDevice].identifierForVendor UUIDString]
+/**
+ * 获取设备系统版本
+ */
+#define SG_DEVICE_SYSTEM_VERSION    [[[UIDevice currentDevice] systemVersion] floatValue]
 
 /*******************************************调试相关***************************************************/
 /**
