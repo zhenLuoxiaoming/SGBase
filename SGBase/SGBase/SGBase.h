@@ -18,6 +18,7 @@
 #import "SGAppHelper.h"
 #import "SGBaseNavigationController.h"
 #import "SGBaseTabBarController.h"
+#import "SGBaseRefresh.h"
 #import "SGNetTool.h"
 #import "SGDialog.h"
 #endif /* SGBase_h */

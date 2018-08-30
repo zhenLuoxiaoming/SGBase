@@ -53,6 +53,12 @@
 -(void)rightButtonClick;
 
 /**
+ * 返回按钮
+ * @param imgName 按钮图片名字
+ */
+-(void)addBackButton:(NSString *)imgName;
+
+/**
  * 在设置了自定义导航返回按钮的时候点击返回按钮将要执行的方法。
  * 注:如果需要在pop到上一级控制器的时候做某些操作可以在子类当中重写该方法。
  */

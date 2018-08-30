@@ -151,9 +151,9 @@
 }
 
 #pragma -mark:设置有导航栏的情况下普遍返回按钮的样式
--(void)addBackButton {
+-(void)addBackButton:(NSString *)imgName{
     if (self.navigationController.childViewControllers.count > 1) { // 非根控制器
-        self.navigationItem.leftBarButtonItem = [self itemWithimage:[UIImage imageNamed:@"nav_back_white"] selImage:[UIImage imageNamed:@"nav_back_white"] target:self action:@selector(goback)];
+        self.navigationItem.leftBarButtonItem = [self itemWithimage:[UIImage imageNamed:imgName] selImage:[UIImage imageNamed:imgName] target:self action:@selector(goback)];
     }
 }
 
