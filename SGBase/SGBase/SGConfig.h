@@ -26,4 +26,10 @@
  */
 @property(nonatomic,strong)UIColor * navTileColor;
 
+/**
+ * 是否隐藏导航栏的那根黑线 YES:隐藏 NO:显示, 默认 YES
+ * 注:在viewDidload里面设置好.
+ */
+@property (nonatomic,assign) BOOL hideNavLine;
+
 @end

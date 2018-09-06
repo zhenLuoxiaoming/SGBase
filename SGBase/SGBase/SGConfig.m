@@ -16,6 +16,7 @@
         mananger = [[SGConfig alloc]init];
         mananger.navTileColor = [UIColor blackColor];
         mananger.navTitleFont = [UIFont systemFontOfSize:17];
+        mananger.hideNavLine  = YES;
     });
     return mananger;
 }

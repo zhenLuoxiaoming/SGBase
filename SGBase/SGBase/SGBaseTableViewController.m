@@ -56,6 +56,7 @@
     if ([SGConfig shareInstance].backImageName) {
         [self addBackButton:[SGConfig shareInstance].backImageName];
     }
+    self.tableView.tableFooterView = [UIView new];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
