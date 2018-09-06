@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SGBase"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "SGBase freamwork"
 
   # This description is used to generate tags and improve search results.
@@ -132,6 +132,5 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "SVProgressHUD", "~> 2.2.5"
-  s.dependency "MJRefresh", "~> 3.1.15.6"
-
+  s.dependency "MJRefresh", "~> 3.1.0"
 end

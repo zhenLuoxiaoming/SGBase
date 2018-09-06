@@ -7,7 +7,7 @@
 //
 
 #import "SGBaseRefresh.h"
-#import "MJRefresh.h"
+
 @implementation SGBaseRefresh
 
 #pragma mark - 刷新
