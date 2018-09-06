@@ -1,77 +1,31 @@
 //
-//  SGBaseViewController.m
-//  SGFreamwoke
+//  SGBaseTableViewController.m
+//  SGBase
 //
-//  Created by 罗晓明 on 2018/8/28.
+//  Created by  on 2018/9/3.
 //  Copyright © 2018年 Rowling. All rights reserved.
 //
 
-#import "SGBaseViewController.h"
-#import "SGBaseMacro.h"
+#import "SGBaseTableViewController.h"
 #import "UIView+SGExtension.h"
-@interface SGBaseViewController ()
+
+@interface SGBaseTableViewController ()
 
 @end
 
-@implementation SGBaseViewController
-#pragma -mark:BaseTabelView懒加载及相关设置与代理绑定
--(UITableView *)BaseTableView {
-    if (_BaseTableView == nil) {
-        CGRect tableFrame;
-        if (self.navigationController) {
-            tableFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - SG_NAV_HEIGHT -SG_BOTTOM_SPACE) ;
-        }else {
-            tableFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) ;
-        }
-        _BaseTableView = [[UITableView alloc]initWithFrame:tableFrame style:UITableViewStylePlain];
-        _BaseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _BaseTableView.delegate = self;
-        _BaseTableView.dataSource = self;
-        _BaseTableView.tableFooterView = [[UIView alloc]init];
-        _BaseTableView.estimatedSectionFooterHeight = 0;
-        _BaseTableView.estimatedSectionHeaderHeight = 0;
-        _BaseTableView.estimatedRowHeight = 0;
-        _BaseTableView.backgroundColor = [UIColor clearColor];
-        if (@available(iOS 11.0, *)){
-            _BaseTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
-    }
-    return _BaseTableView;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell * cell = [[UITableViewCell alloc]init];
-    return cell;
-}
+@implementation SGBaseTableViewController
 
 #pragma -mark:隐藏导航栏的那根黑线
 //隐藏line
 - (void)NavgationBarLineHidden:(BOOL)hidden {
-    if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)])
-    {
+    if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
         NSArray *list=self.navigationController.navigationBar.subviews;
-        for (id obj in list)
-        {
-            if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0)
-            {//10.0的系统字段不一样
+        for (id obj in list){
+            if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0){
+                //10.0的系统字段不一样
                 UIView *view =   (UIView*)obj;
                 for (id obj2 in view.subviews) {
-                    if ([obj2 isKindOfClass:[UIImageView class]])
-                    {
+                    if ([obj2 isKindOfClass:[UIImageView class]]){
                         UIImageView *image =  (UIImageView*)obj2;
                         if (image.sgHeight < 2) {
                             image.hidden = hidden;
@@ -108,6 +62,7 @@
         [self NavgationBarLineHidden:YES];
     }
 }
+
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     // 在该控制器消失前，恢复黑线显示
@@ -157,8 +112,7 @@
     }
 }
 
-- (UIBarButtonItem *)itemWithimage:(UIImage *)image selImage:(UIImage *)selImage target:(id)target action:(SEL)action
-{
+- (UIBarButtonItem *)itemWithimage:(UIImage *)image selImage:(UIImage *)selImage target:(id)target action:(SEL)action{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:image forState:UIControlStateNormal];
     btn.sgSize = CGSizeMake(40, 40);
@@ -175,4 +129,5 @@
 -(void)dealloc {
     NSLog(@"[%@ is dealloced]",NSStringFromClass([self class]));
 }
+
 @end

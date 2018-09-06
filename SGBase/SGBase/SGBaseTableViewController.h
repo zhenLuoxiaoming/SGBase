@@ -1,18 +1,14 @@
 //
-//  SGBaseViewController.h
-//  SGFreamwoke
+//  SGBaseTableViewController.h
+//  SGBase
 //
-//  Created by 罗晓明 on 2018/8/28.
+//  Created by  on 2018/9/3.
 //  Copyright © 2018年 Rowling. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SGBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-/**
- * 一个快捷生成的tableView,在子类中使用的时候只需要将该BaseTableView 加入到视图中（协议代理已经绑定好，为当前控制器）,然后实现协议方法即可。如果有位置大小等需要修改的直接修改frame即可。
- */
-@property(nonatomic,strong)UITableView * BaseTableView;
+@interface SGBaseTableViewController : UITableViewController
 
 /**
  * 是否隐藏导航栏的那根黑线 YES:隐藏 NO:显示
