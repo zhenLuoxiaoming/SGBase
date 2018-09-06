@@ -108,14 +108,14 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // 判断是否需要隐藏黑线
-    if (self.hideNavLine) {
+    if ([SGConfig shareInstance].hideNavLine) {
         [self NavgationBarLineHidden:YES];
     }
 }
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     // 在该控制器消失前，恢复黑线显示
-    if (self.hideNavLine) {
+    if ([SGConfig shareInstance].hideNavLine) {
         [self NavgationBarLineHidden:NO];
     }
 }
