@@ -32,6 +32,7 @@
 		5AF82C8421368C1E00640C94 /* UITextField+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C8221368C1D00640C94 /* UITextField+SGExtension.m */; };
 		5AF82C88213691A300640C94 /* SGBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C87213691A300640C94 /* SGBaseTabBarController.m */; };
 		5AF82C8B213695B000640C94 /* UIImage+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF82C8A213695B000640C94 /* UIImage+SGExtension.m */; };
+		E81B78972140BB8A00B33E5D /* SGConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B78962140BB8A00B33E5D /* SGConfig.m */; };
 		E8218A032136527200AD89A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A022136527200AD89A1 /* AppDelegate.m */; };
 		E8218A062136527200AD89A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8218A052136527200AD89A1 /* ViewController.m */; };
 		E8218A092136527200AD89A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8218A072136527200AD89A1 /* Main.storyboard */; };
@@ -111,6 +112,8 @@
 		5AF82C87213691A300640C94 /* SGBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBaseTabBarController.m; sourceTree = "<group>"; };
 		5AF82C89213695B000640C94 /* UIImage+SGExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SGExtension.h"; sourceTree = "<group>"; };
 		5AF82C8A213695B000640C94 /* UIImage+SGExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SGExtension.m"; sourceTree = "<group>"; };
+		E81B78952140BB8A00B33E5D /* SGConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGConfig.h; sourceTree = "<group>"; };
+		E81B78962140BB8A00B33E5D /* SGConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGConfig.m; sourceTree = "<group>"; };
 		E82189FE2136527200AD89A1 /* SGBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8218A012136527200AD89A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8218A022136527200AD89A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 				5AF82C8021368C1D00640C94 /* UITextView+SGExtension.m */,
 				5AF82C89213695B000640C94 /* UIImage+SGExtension.h */,
 				5AF82C8A213695B000640C94 /* UIImage+SGExtension.m */,
+				E81B78952140BB8A00B33E5D /* SGConfig.h */,
+				E81B78962140BB8A00B33E5D /* SGConfig.m */,
 			);
 			path = SGBase;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				5AF82C8421368C1E00640C94 /* UITextField+SGExtension.m in Sources */,
 				E8218A37213652F000AD89A1 /* SGBaseViewController.m in Sources */,
 				E8218A59213656DA00AD89A1 /* SGNetTool.m in Sources */,
+				E81B78972140BB8A00B33E5D /* SGConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

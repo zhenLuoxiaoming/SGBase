@@ -22,4 +22,5 @@
 #import "SGBaseRefresh.h"
 #import "SGNetTool.h"
 #import "SGDialog.h"
+#import "SGConfig.h"
 #endif /* SGBase_h */

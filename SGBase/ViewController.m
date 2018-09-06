@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor sgColorWithRed:20 green:20 blue:20 alpha:0.5];
 }
 
 

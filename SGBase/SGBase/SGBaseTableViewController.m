@@ -8,7 +8,7 @@
 
 #import "SGBaseTableViewController.h"
 #import "UIView+SGExtension.h"
-
+#import "SGConfig.h"
 @interface SGBaseTableViewController ()
 
 @end
@@ -53,6 +53,9 @@
 #pragma -mark:生命周期
 -(void)viewDidLoad {
     [super viewDidLoad];
+    if ([SGConfig shareInstance].backImageName) {
+        [self addBackButton:[SGConfig shareInstance].backImageName];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {

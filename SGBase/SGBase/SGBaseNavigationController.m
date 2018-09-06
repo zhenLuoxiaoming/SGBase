@@ -7,7 +7,7 @@
 //
 
 #import "SGBaseNavigationController.h"
-
+#import "SGConfig.h"
 @interface SGBaseNavigationController ()<UIGestureRecognizerDelegate>
 
 @end
@@ -22,7 +22,7 @@
 }
 
 -(void)setUI {
-    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:17]};
+    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[SGConfig shareInstance].navTileColor ,NSFontAttributeName:[SGConfig shareInstance].navTitleFont};
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

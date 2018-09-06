@@ -18,6 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    [SGConfig shareInstance].navTileColor = [UIColor blueColor];
     NSMutableArray *controls = [NSMutableArray array];
     ViewController *vc = [ViewController new];
     [controls addObject:vc];
