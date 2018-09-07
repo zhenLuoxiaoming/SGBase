@@ -108,7 +108,7 @@
  * 打印
  */
 #if DEBUG
-#define NSLog(format, ...) do {                                             \
+#define SGLog(format, ...) do {                                             \
 fprintf(stderr, "<%s : line(%d)> %s\n",     \
 [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
 __LINE__, __func__);                        \
@@ -116,7 +116,7 @@ printf("%s\n", [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]); 
 fprintf(stderr, "-------------------\n");   \
 } while (0)
 #else
-#define NSLog(format, ...) nil
+#define SGLog(format, ...) nil
 #endif
 
 #endif /* SGHeader_h */
