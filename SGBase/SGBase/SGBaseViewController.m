@@ -20,7 +20,7 @@
     if (_BaseTableView == nil) {
         CGRect tableFrame;
         if (self.navigationController) {
-            tableFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - SG_NAV_HEIGHT -SG_BOTTOM_SPACE) ;
+            tableFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - SG_NAVSTA_HEIGHT -SG_BOTTOM_SPACE) ;
         }else {
             tableFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) ;
         }
