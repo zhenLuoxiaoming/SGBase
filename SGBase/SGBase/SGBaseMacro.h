@@ -107,16 +107,16 @@
 /**
  * 打印
  */
-#define SGFunc SGLog(@"%s",__func__)
-
-#ifdef DEBUG // 调试
-
-#define SGLog(...) NSLog(__VA_ARGS__)
-
-#else // 发布
-
-#define SGLog(...)
-
+#if DEBUG
+#define NSLog(format, ...) do {                                             \
+fprintf(stderr, "<%s : line(%d)> %s\n",     \
+[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+__LINE__, __func__);                        \
+printf("%s\n", [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);           \
+fprintf(stderr, "-------------------\n");   \
+} while (0)
+#else
+#define NSLog(format, ...) nil
 #endif
 
 #endif /* SGHeader_h */
