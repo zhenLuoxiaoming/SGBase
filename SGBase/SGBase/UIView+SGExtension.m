@@ -29,6 +29,26 @@
     return self.sgY;
 }
 
+- (CGFloat)sgBottom{
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (void)setSgBottom:(CGFloat)sgBottom {
+    CGRect frame = self.frame;
+    frame.origin.y = sgBottom - frame.size.height;
+    self.frame = frame;
+}
+
+- (CGFloat)sgRight {
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (void)setSgRight:(CGFloat)sgRight {
+    CGRect frame = self.frame;
+    frame.origin.x = sgRight - frame.size.width;
+    self.frame = frame;
+}
+
 -(void)setSgCenterX:(CGFloat)sgCenterX {
     CGPoint center = self.center;
     center.x = sgCenterX;

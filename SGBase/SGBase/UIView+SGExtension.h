@@ -24,6 +24,14 @@ typedef NS_ENUM(NSUInteger, DottedLineDirection) {
  **/
 @property (assign, nonatomic) CGFloat sgY;
 /*
+ * view的bottom
+ **/
+@property (assign, nonatomic) CGFloat  sgBottom;
+/*
+ * view的right
+ **/
+@property (assign, nonatomic) CGFloat  sgRight;
+/*
  * view的centerX
  **/
 @property (assign, nonatomic) CGFloat sgCenterX;

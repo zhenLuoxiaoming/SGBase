@@ -10,7 +10,11 @@
 #import "SGBaseMacro.h"
 #import "UIView+SGExtension.h"
 #import "SGConfig.h"
+#import "SGNoDataView.h"
+
 @interface SGBaseViewController ()
+
+@property (weak, nonatomic) SGNoDataView *noDataView;;
 
 @end
 
@@ -179,4 +183,35 @@
 -(void)dealloc {
     NSLog(@"[%@ is dealloced]",NSStringFromClass([self class]));
 }
+
+- (void)showNoDataView:(NSString *)imgName remindStr:(NSString *)remindStr addView:(UIView *)superView{
+    SGNoDataView *noData    = [[SGNoDataView alloc] initWithFrame:superView == nil ? self.view.bounds : superView.bounds imgName:imgName remindStr:remindStr isShowBtn:NO];
+    _noDataView             = noData;
+    if (superView) {
+        [superView addSubview:noData];
+    }else{
+        [self.view addSubview:noData];
+    }
+}
+
+- (void)showErrorMessage:(NSString *)imgName viewframe:(CGRect)frame addView:(UIView *)view retryBlock:(void (^)(void))retry{
+    CGRect viewRect         = frame.size.width==0 ? frame : self.view.bounds;
+    SGNoDataView *noData    = [[SGNoDataView alloc] initWithFrame:viewRect imgName:imgName remindStr:@"网络不给力，检查网络再试试" isShowBtn:YES];
+    _noDataView             = noData;
+    noData.ButtonClickBlock = ^{
+        if (retry) {
+            retry();
+        }
+    };
+    if (view) {
+        [view addSubview:noData];
+    }else{
+        [self.view addSubview:noData];
+    }
+}
+
+- (void)removeNoDataView{
+    [_noDataView removeFromSuperview];
+}
+
 @end

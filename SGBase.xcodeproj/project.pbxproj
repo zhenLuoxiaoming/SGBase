@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A39DE6D213D306100A2C252 /* SGBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39DE6C213D306100A2C252 /* SGBaseTableViewController.m */; };
+		5A3E3F6121443B9100743A71 /* SGNoDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3E3F6021443B9000743A71 /* SGNoDataView.m */; };
 		5A54E1502137C9A300BEF88C /* SGBaseRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A54E14F2137C9A300BEF88C /* SGBaseRefresh.m */; };
 		5A54E17E2137C9B700BEF88C /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A54E1522137C9B700BEF88C /* UIScrollView+MJRefresh.m */; };
 		5A54E17F2137C9B700BEF88C /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A54E1532137C9B700BEF88C /* MJRefreshConst.m */; };
@@ -64,6 +65,8 @@
 /* Begin PBXFileReference section */
 		5A39DE6B213D306100A2C252 /* SGBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBaseTableViewController.h; sourceTree = "<group>"; };
 		5A39DE6C213D306100A2C252 /* SGBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBaseTableViewController.m; sourceTree = "<group>"; };
+		5A3E3F5F21443B9000743A71 /* SGNoDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGNoDataView.h; sourceTree = "<group>"; };
+		5A3E3F6021443B9000743A71 /* SGNoDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNoDataView.m; sourceTree = "<group>"; };
 		5A54E14E2137C9A300BEF88C /* SGBaseRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBaseRefresh.h; sourceTree = "<group>"; };
 		5A54E14F2137C9A300BEF88C /* SGBaseRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBaseRefresh.m; sourceTree = "<group>"; };
 		5A54E1522137C9B700BEF88C /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
@@ -326,6 +329,8 @@
 				5A39DE6C213D306100A2C252 /* SGBaseTableViewController.m */,
 				E8218A2A213652EF00AD89A1 /* SGBaseViewController.h */,
 				E8218A2F213652EF00AD89A1 /* SGBaseViewController.m */,
+				5A3E3F5F21443B9000743A71 /* SGNoDataView.h */,
+				5A3E3F6021443B9000743A71 /* SGNoDataView.m */,
 				5A54E14E2137C9A300BEF88C /* SGBaseRefresh.h */,
 				5A54E14F2137C9A300BEF88C /* SGBaseRefresh.m */,
 				E8218A30213652EF00AD89A1 /* UIColor+SGExtension.h */,
@@ -498,6 +503,7 @@
 				E8218A6C2136660200AD89A1 /* SVIndefiniteAnimatedView.m in Sources */,
 				5A54E1832137C9B700BEF88C /* MJRefreshBackGifFooter.m in Sources */,
 				5A54E1892137C9B700BEF88C /* MJRefreshNormalHeader.m in Sources */,
+				5A3E3F6121443B9100743A71 /* SGNoDataView.m in Sources */,
 				5A54E18C2137C9B700BEF88C /* MJRefreshFooter.m in Sources */,
 				5A39DE6D213D306100A2C252 /* SGBaseTableViewController.m in Sources */,
 				5A54E18E2137C9B700BEF88C /* MJRefreshBackFooter.m in Sources */,

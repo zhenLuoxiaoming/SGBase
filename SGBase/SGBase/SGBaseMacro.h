@@ -102,6 +102,10 @@
  * 获取设备系统版本
  */
 #define SG_DEVICE_SYSTEM_VERSION    [[[UIDevice currentDevice] systemVersion] floatValue]
+/**
+ * NSUserDefaults
+ */
+#define SG_USERDEFAULTS         [NSUserDefaults standardUserDefaults]
 
 /*******************************************调试相关***************************************************/
 /**

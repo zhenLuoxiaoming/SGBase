@@ -23,4 +23,5 @@
 #import "SGNetTool.h"
 #import "SGDialog.h"
 #import "SGConfig.h"
+#import "SGNoDataView.h"
 #endif /* SGBase_h */
