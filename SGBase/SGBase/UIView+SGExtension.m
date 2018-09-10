@@ -26,7 +26,7 @@
 }
 
 -(CGFloat)sgY {
-    return self.sgY;
+    return self.frame.origin.y;
 }
 
 - (CGFloat)sgBottom{
