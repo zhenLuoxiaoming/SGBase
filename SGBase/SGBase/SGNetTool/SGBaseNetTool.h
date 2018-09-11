@@ -27,15 +27,13 @@ typedef void( ^ XMUploadProgress)(int64_t bytesProgress,
  */
 + (id)GET_UrlString:(NSString *)urlString
          parameters:(NSDictionary *)params
-            success:(XMResponseSuccess)success
-               fail:(XMResponseFail)fail;
+            complete:(void (^)(id responseObject, NSString *message, NSInteger success))complete;
 /**
  *  POST请求
  */
 + (id)POST_UrlString:(NSString *)url
           parameters:(NSDictionary *)params
-             success:(XMResponseSuccess)success
-                fail:(XMResponseFail)fail;
+             complete:(void (^)(id responseObject, NSString *message, NSInteger success))complete;
 
 /**
  *  PUT请求
