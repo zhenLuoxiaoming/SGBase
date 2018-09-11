@@ -63,7 +63,7 @@ static NSMutableArray *tasks;
         if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
             complete(responseObjectDict, nil, 0);
         }else{
-            complete(nil, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
+            complete(nil, responseObjectDict[@"msg"], [responseObjectDict[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", urlString, params, responseObjectDict);
@@ -96,7 +96,7 @@ static NSMutableArray *tasks;
         if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
             complete(responseObjectDict, nil, 0);
         }else{
-            complete(nil, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
+            complete(nil, responseObjectDict[@"msg"], [responseObjectDict[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
@@ -124,7 +124,7 @@ static NSMutableArray *tasks;
         if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
             complete(responseObjectDict, nil, 0);
         }else{
-            complete(nil, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
+            complete(nil, responseObjectDict[@"msg"], [responseObjectDict[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
@@ -152,7 +152,7 @@ static NSMutableArray *tasks;
         if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
             complete(responseObjectDict, nil, 0);
         }else{
-            complete(nil, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
+            complete(nil, responseObjectDict[@"msg"], [responseObjectDict[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
