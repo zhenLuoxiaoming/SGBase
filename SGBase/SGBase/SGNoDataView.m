@@ -24,7 +24,7 @@
         self.frame           = frame;
         self.backgroundColor = SG_COLOR_RGB(0xF7F7F7);
         _imgName             = imgName;
-        _remindStr           = remindStr?@"暂无数据":remindStr;
+        _remindStr           = remindStr?remindStr:@"暂无数据";
         _isShow              = isShow;
         [self setUpInterFace];
     }
