@@ -38,10 +38,16 @@ typedef void( ^ XMUploadProgress)(int64_t bytesProgress,
 /**
  *  PUT请求
  */
-+(id)PUT_UrlString:(NSString *)url
++ (id)PUT_UrlString:(NSString *)url
         parameters:(NSDictionary *)params
-           success:(XMResponseSuccess)success
-              fail:(XMResponseFail)fail;
+           complete:(void (^)(id responseObject, NSString *message, NSInteger success))complete;
+
+/**
+ *  Delete请求
+ */
++ (id)Delete_UrlString:(NSString *)url
+            parameters:(NSDictionary *)params
+              complete:(void (^)(id responseObject, NSString *message, NSInteger success))complete;
 
 /**
  * 图片上传（多张）

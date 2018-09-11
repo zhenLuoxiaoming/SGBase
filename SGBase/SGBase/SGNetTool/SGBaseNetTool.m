@@ -8,6 +8,7 @@
 
 #import "SGBaseNetTool.h"
 #import "SGBaseNetConfig.h"
+#import "SGBaseMacro.h"
 
 static NSMutableArray *tasks;
 
@@ -53,7 +54,7 @@ static NSMutableArray *tasks;
     return tasks;
 }
 
-+(id)GET_UrlString:(NSString *)urlString parameters:(NSDictionary *)params complete:(void (^)(id, NSString *, NSInteger))complete {
++ (id)GET_UrlString:(NSString *)urlString parameters:(NSDictionary *)params complete:(void (^)(id, NSString *, NSInteger))complete {
     if (urlString == nil){
         return nil;
     }
@@ -70,7 +71,9 @@ static NSMutableArray *tasks;
             complete(responseObject, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
+        SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", urlString, params, responseObjectDict);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        SGLog(@"\nURL:%@ PARAMETRS:%@ \nERROR:%@",urlString, params, error);
         complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
         [[self tasks] removeObject:sessionTask];
     }];
@@ -84,7 +87,7 @@ static NSMutableArray *tasks;
     return [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
 }
 
-+(id)POST_UrlString:(NSString *)url parameters:(NSDictionary *)params complete:(void (^)(id, NSString *, NSInteger))complete {
++ (id)POST_UrlString:(NSString *)url parameters:(NSDictionary *)params complete:(void (^)(id, NSString *, NSInteger))complete {
     if (url == nil){
         return nil;
     }
@@ -101,7 +104,9 @@ static NSMutableArray *tasks;
             complete(responseObject, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
+        SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, error);
         complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
         [[self tasks] removeObject:sessionTask];
     }];
@@ -111,7 +116,7 @@ static NSMutableArray *tasks;
     return sessionTask;
 }
 
-+(id)PUT_UrlString:(NSString *)url parameters:(NSDictionary *)params success:(XMResponseSuccess)success fail:(XMResponseFail)fail {
++ (id)PUT_UrlString:(NSString *)url parameters:(NSDictionary *)params complete:(void (^)(id, NSString *, NSInteger))complete {
     if (url == nil){
         return nil;
     }
@@ -121,14 +126,44 @@ static NSMutableArray *tasks;
     sessionTask = [[self shareAFManager] PUT:URLString parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSData *data = responseObject;
         NSDictionary *responseObjectDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        if (success){
-            success(responseObjectDict);
+        if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
+            complete(responseObject, nil, 0);
+        }else{
+            complete(responseObject, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
+        SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (fail){
-            fail(error);
+        SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, error);
+        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
+        [[self tasks] removeObject:sessionTask];
+    }];
+    if (sessionTask){
+        [[self tasks] addObject:sessionTask];
+    }
+    return sessionTask;
+}
+
++ (id)Delete_UrlString:(NSString *)url parameters:(NSDictionary *)params complete:(void (^)(id, NSString *, NSInteger))complete{
+    if (url == nil){
+        return nil;
+    }
+    /*! 检查地址中是否有中文 */
+    NSString *URLString = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
+    NSURLSessionTask *sessionTask = nil;
+    sessionTask = [[self shareAFManager] DELETE:URLString parameters:params headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSData *data = responseObject;
+        NSDictionary *responseObjectDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
+            complete(responseObject, nil, 0);
+        }else{
+            complete(responseObject, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
         }
+        [[self tasks] removeObject:sessionTask];
+        SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, error);
+        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
         [[self tasks] removeObject:sessionTask];
     }];
     if (sessionTask){
@@ -178,7 +213,6 @@ static NSMutableArray *tasks;
         uploadProgressBlock(uploadProgress.fractionCompleted,1,1);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         succeedBlock(task,responseObject);
-
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failedBlock(task,error);
     }];
