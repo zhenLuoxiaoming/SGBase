@@ -21,9 +21,9 @@ static NSMutableArray *tasks;
     static AFHTTPSessionManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager = [AFHTTPSessionManager manager];
         /*! 设置请求超时时间 */
-        manager.requestSerializer = [AFHTTPRequestSerializer serializer];// 请求
+        manager.requestSerializer  = [AFHTTPRequestSerializer serializer];// 请求
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];//响应
         manager.requestSerializer.timeoutInterval = 10;
         /*! 设置响应数据的基本了类型 */
