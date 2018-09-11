@@ -21,12 +21,7 @@ static NSMutableArray *tasks;
     static AFHTTPSessionManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [AFHTTPSessionManager manager];
-        if ([SGBaseNetConfig shareInstance].isHead) {
-            for (NSDictionary *dic in [SGBaseNetConfig shareInstance].headParams) {
-                [manager.requestSerializer setValue:dic[@"value"] forHTTPHeaderField:dic[@"key"]];
-            }
-        }
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         /*! 设置请求超时时间 */
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];// 请求
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];//响应
@@ -66,9 +61,9 @@ static NSMutableArray *tasks;
         NSData *data = responseObject;
         NSDictionary *responseObjectDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
-            complete(responseObject, nil, 0);
+            complete(responseObjectDict, nil, 0);
         }else{
-            complete(responseObject, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
+            complete(nil, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", urlString, params, responseObjectDict);
@@ -99,9 +94,9 @@ static NSMutableArray *tasks;
         NSData *data = responseObject;
         NSDictionary *responseObjectDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
-            complete(responseObject, nil, 0);
+            complete(responseObjectDict, nil, 0);
         }else{
-            complete(responseObject, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
+            complete(nil, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
@@ -127,9 +122,9 @@ static NSMutableArray *tasks;
         NSData *data = responseObject;
         NSDictionary *responseObjectDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
-            complete(responseObject, nil, 0);
+            complete(responseObjectDict, nil, 0);
         }else{
-            complete(responseObject, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
+            complete(nil, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
@@ -155,9 +150,9 @@ static NSMutableArray *tasks;
         NSData *data = responseObject;
         NSDictionary *responseObjectDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
-            complete(responseObject, nil, 0);
+            complete(responseObjectDict, nil, 0);
         }else{
-            complete(responseObject, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
+            complete(nil, responseObjectDict[@"msg"], [responseObject[@"code"] integerValue]);
         }
         [[self tasks] removeObject:sessionTask];
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);

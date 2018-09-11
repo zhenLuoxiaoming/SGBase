@@ -21,6 +21,8 @@ typedef void( ^ XMUploadProgress)(int64_t bytesProgress,
 
 @interface SGBaseNetTool : NSObject
 
++ (AFHTTPSessionManager *)shareAFManager;
+
 /**
  *  GET请求
  *

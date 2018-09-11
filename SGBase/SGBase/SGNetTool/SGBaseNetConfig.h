@@ -23,15 +23,5 @@ singleton_interface(SGBaseNetConfig)
  */
 @property (copy, nonatomic) NSString *requestErrorString;
 
-/** 是否需要在head 设备参数，比如用户token，默认否*/
-@property (assign, nonatomic) BOOL isHead;
-
-/** head 参数，格式如下
- *  [{@"value1":@"value", @"key1":@"key"},
- *   {@"value2":@"value", @"key2":@"key"}]
- */
-@property (copy, nonatomic) NSArray *headParams;
-
-
 
 @end
