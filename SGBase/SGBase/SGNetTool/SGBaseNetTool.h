@@ -67,5 +67,4 @@ typedef void( ^ XMUploadProgress)(int64_t bytesProgress,
  * 取消请求
  */
 + (void)cancelNetwork;
-
 @end

@@ -17,7 +17,7 @@
     [SVProgressHUD showImage:[UIImage imageNamed:@"noimage"] status:meg];
     //    [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
-    [SVProgressHUD performSelector:@selector(dismiss) withObject:nil afterDelay:3];
+    [SVProgressHUD performSelector:@selector(dismiss) withObject:nil afterDelay:2];
 }
 
 + (void)showLoad {
