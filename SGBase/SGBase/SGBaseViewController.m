@@ -185,7 +185,8 @@
 }
 
 - (void)showNoDataView:(NSString *)imgName remindStr:(NSString *)remindStr addView:(UIView *)superView{
-    SGNoDataView *noData    = [[SGNoDataView alloc] initWithFrame:superView == nil ? self.view.bounds : superView.bounds imgName:imgName remindStr:remindStr isShowBtn:NO];
+    CGRect rect             = superView == nil ? self.view.bounds : CGRectMake(0, 0, superView.sgWidth, superView.sgHeight);
+    SGNoDataView *noData    = [[SGNoDataView alloc] initWithFrame:rect imgName:imgName remindStr:remindStr isShowBtn:NO];
     _noDataView             = noData;
     if (superView) {
         [superView addSubview:noData];
