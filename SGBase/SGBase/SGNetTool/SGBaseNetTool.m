@@ -214,4 +214,53 @@ static NSMutableArray *tasks;
     [task resume];
     return task;
 }
+
++(id)PostParametersInBodyWithUrl:(NSString *)url param:(NSDictionary *)param body:(id)body complete:(void (^)(id, NSString *, NSInteger))complete {
+    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+    //如果你不需要将通过body传 那就将参数放入parameters里面
+    __block NSString * paramStr = @"";
+    [param enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        paramStr = [paramStr stringByAppendingString:@"&"];
+        paramStr = [paramStr stringByAppendingString:key];
+        paramStr = [paramStr stringByAppendingString:@"="];
+        paramStr = [paramStr stringByAppendingString:obj];
+    }];
+    if (paramStr.length > 0) {
+        paramStr = [paramStr substringFromIndex:1];
+        url = [NSString stringWithFormat:@"%@?%@",url,paramStr];
+    }
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:param error:nil];
+    request.timeoutInterval= 10;
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    // 设置body 在这里将参数放入到body
+    [request setHTTPBody:data];
+    NSURLSessionTask *sessionTask = nil;
+    sessionTask = [[self shareAFManager] dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if(responseObject!=nil){
+            NSData *data = responseObject;
+            NSDictionary *responseObjectDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            if ([responseObjectDict[@"code"] intValue] == [SGBaseNetConfig shareInstance].requestSuccessStatusCode) {
+                complete(responseObjectDict, nil, 0);
+            }else{
+                complete(nil, responseObjectDict[@"msg"], [responseObjectDict[@"code"] integerValue]);
+            }
+            [[self tasks] removeObject:sessionTask];
+            SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, body, responseObjectDict);
+        } else {
+            SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, body, error);
+            complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
+            [[self tasks] removeObject:sessionTask];
+        }
+        [[self tasks] removeObject:sessionTask];
+    }];
+    if (sessionTask)
+    {
+        [[self tasks] addObject:sessionTask];
+    }
+    [sessionTask resume];
+    return sessionTask;
+}
+
+
+
 @end
