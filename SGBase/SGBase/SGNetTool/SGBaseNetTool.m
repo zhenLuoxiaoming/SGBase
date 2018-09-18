@@ -223,16 +223,22 @@ static NSMutableArray *tasks;
         paramStr = [paramStr stringByAppendingString:@"&"];
         paramStr = [paramStr stringByAppendingString:key];
         paramStr = [paramStr stringByAppendingString:@"="];
-        paramStr = [paramStr stringByAppendingString:obj];
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            paramStr = [paramStr stringByAppendingString:[((NSNumber *)obj) stringValue]];
+        } else {
+            paramStr = [paramStr stringByAppendingString:[obj string]];
+        }
     }];
     if (paramStr.length > 0) {
         paramStr = [paramStr substringFromIndex:1];
         url = [NSString stringWithFormat:@"%@?%@",url,paramStr];
     }
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:param error:nil];
+    NSMutableURLRequest *request = [[self shareAFManager].requestSerializer requestWithMethod:@"POST" URLString:url parameters:param error:nil];
     request.timeoutInterval= 10;
+    
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     // 设置body 在这里将参数放入到body
+    SGLog(@"%@",[request allHTTPHeaderFields]);
     [request setHTTPBody:data];
     NSURLSessionTask *sessionTask = nil;
     sessionTask = [[self shareAFManager] dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
