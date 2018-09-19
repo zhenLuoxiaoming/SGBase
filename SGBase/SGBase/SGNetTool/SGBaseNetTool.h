@@ -52,12 +52,20 @@ typedef void( ^ XMUploadProgress)(int64_t bytesProgress,
               complete:(void (^)(id responseObject, NSString *message, NSInteger success))complete;
 
 /**
- *  请求参数放body里请求
+ *  请求参数放body里post请求
  */
 +(id)PostParametersInBodyWithUrl:(NSString *)url
                            param:(NSDictionary *)param
                             body:(id)body
                         complete:(void (^)(id, NSString *, NSInteger))complete;
+
+/**
+ *  请求参数放body里put请求
+ */
++(id)PutParametersInBodyWithUrl:(NSString *)url
+                          param:(NSDictionary *)param
+                           body:(id)body
+                       complete:(void (^)(id, NSString *, NSInteger))complete;
 
 /**
  * 图片上传（多张）
