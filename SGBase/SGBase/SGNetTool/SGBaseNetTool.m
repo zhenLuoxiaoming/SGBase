@@ -226,7 +226,7 @@ static NSMutableArray *tasks;
         if ([obj isKindOfClass:[NSNumber class]]) {
             paramStr = [paramStr stringByAppendingString:[((NSNumber *)obj) stringValue]];
         } else {
-            paramStr = [paramStr stringByAppendingString:[obj string]];
+            paramStr = [paramStr stringByAppendingString:obj];
         }
     }];
     if (paramStr.length > 0) {
@@ -279,7 +279,7 @@ static NSMutableArray *tasks;
         if ([obj isKindOfClass:[NSNumber class]]) {
             paramStr = [paramStr stringByAppendingString:[((NSNumber *)obj) stringValue]];
         } else {
-            paramStr = [paramStr stringByAppendingString:[obj string]];
+            paramStr = [paramStr stringByAppendingString:obj];
         }
     }];
     if (paramStr.length > 0) {
