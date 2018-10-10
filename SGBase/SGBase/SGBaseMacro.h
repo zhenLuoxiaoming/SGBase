@@ -75,6 +75,7 @@
 #define SG_IS_IPHONE_6       ((double)[[UIScreen mainScreen] bounds].size.height == (double )667)
 #define SG_IS_IPHONE_6_PLUS  ((double)[[UIScreen mainScreen] bounds].size.height == (double )736)
 #define SG_IS_IPHONE_X       ((double)[[UIScreen mainScreen] bounds].size.height == (double )812)
+#define SG_IS_IPhoneX_All    ([UIScreen mainScreen].bounds.size.height == 812 || [UIScreen mainScreen].bounds.size.height == 896)
 /**
  * 判断字符串是否为空
  */
