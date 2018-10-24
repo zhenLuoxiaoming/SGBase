@@ -362,4 +362,50 @@
     NSString *weekStr = [weekday objectAtIndex:components.weekday];
     return weekStr;
 }
+
+#pragma mark - 判断输入价格是否合法
++ (BOOL)validateNumber:(NSString*)number text:(NSString *)textFieldText floatCount:(NSInteger)floatCount {
+    BOOL res = YES;
+    NSCharacterSet *tmpSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789."];
+    int i = 0;
+    if (number.length==0) {
+        //允许删除
+        return YES;
+    }
+    if (textFieldText.length == 10 && ![textFieldText containsString:@"."] && ![number isEqualToString:@"."]) {
+        //最多输入10位整数
+        return NO;
+    }
+    while (i < number.length) {
+        //确保是数字
+        NSString * string = [number substringWithRange:NSMakeRange(i, 1)];
+        NSRange range = [string rangeOfCharacterFromSet:tmpSet];
+        if (range.length == 0) {
+            res = NO;
+            break;
+        }
+        i++;
+    }
+    if (textFieldText.length==0) {
+        //第一个不能是.
+        if ([number isEqualToString:@"."]) {
+            return NO;
+        }
+    }
+    NSArray *array = [textFieldText componentsSeparatedByString:@"."];
+    NSInteger count = [array count] ;
+    //小数点只能有一个
+    if (count>1&&[number isEqualToString:@"."]) {
+        return NO;
+    }
+    //控制小数点后面的字数
+    if ([textFieldText rangeOfString:@"."].location!=NSNotFound) {
+        if (textFieldText.length-[textFieldText rangeOfString:@"."].location>floatCount) {
+            return NO;
+        }
+    }
+    return res;
+}
+
+
 @end

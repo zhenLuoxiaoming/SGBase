@@ -94,4 +94,13 @@
  * 星期几
  */
 + (NSString*)weekdayStringFromDate:(NSDate*)inputDate;
+
+/**
+ 判断输入价格是否合法
+ @param number 当前字符
+ @param textFieldText 输入框字符
+ @param floatCount 小数位数
+ */
++ (BOOL)validateNumber:(NSString*)number text:(NSString *)textFieldText floatCount:(NSInteger)floatCount;
+
 @end

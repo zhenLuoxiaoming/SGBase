@@ -39,6 +39,15 @@
 -(void)setRightButtonImage:(UIImage *)image;
 
 /**
+ * 设置当前控制器导航栏左右的按钮文字
+ * 注:当导航栏左/右按钮只有文字的时候可以使用该方法快速创建左右按钮。
+ */
+// 左
+-(void)setLeftButtonTitle:(NSString *)title titleColor:(UIColor *)color titleSize:(CGFloat)size;
+// 右
+-(void)setRightButtonTitle:(NSString *)title titleColor:(UIColor *)color titleSize:(CGFloat)size;
+
+/**
  * 点击导航栏左按钮时执行的方法。需要实现了 -(void)setLeftButtonImage:(UIImage *)image 或者 给leftButton赋值才能有效
  */
 -(void)leftButtonClick;

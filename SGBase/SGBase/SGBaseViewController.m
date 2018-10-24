@@ -152,6 +152,24 @@
     [self setRightButton:btn];
 }
 
+- (void)setLeftButtonTitle:(NSString *)title titleColor:(UIColor *)color titleSize:(CGFloat)size{
+    UIButton * btn = [[UIButton alloc] init];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setTitleColor:color forState:UIControlStateNormal];
+    btn.titleLabel.font = SG_FONT(size);
+    [btn sizeToFit];
+    [self setLeftButton:btn];
+}
+
+- (void)setRightButtonTitle:(NSString *)title titleColor:(UIColor *)color titleSize:(CGFloat)size{
+    UIButton * btn = [[UIButton alloc] init];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setTitleColor:color forState:UIControlStateNormal];
+    btn.titleLabel.font = SG_FONT(size);
+    [btn sizeToFit];
+    [self setRightButton:btn];
+}
+
 -(void)leftButtonClick {
 }
 
