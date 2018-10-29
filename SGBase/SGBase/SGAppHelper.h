@@ -103,4 +103,12 @@
  */
 + (BOOL)validateNumber:(NSString*)number text:(NSString *)textFieldText floatCount:(NSInteger)floatCount;
 
+
+/**
+ 获取验证码倒计时
+ @param timeCount 倒计时
+ @param btn 按钮
+ */
++ (void)countdownTimeCount:(NSInteger)timeCount withButton:(UIButton *)btn;
+
 @end

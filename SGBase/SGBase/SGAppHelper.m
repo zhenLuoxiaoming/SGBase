@@ -407,5 +407,26 @@
     return res;
 }
 
+#pragma mark - 获取验证码倒计时
++ (void)countdownTimeCount:(NSInteger)timeCount withButton:(UIButton *)btn{
+    __block NSInteger second = timeCount;
+    dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, quene);
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(timer, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (second == 0) {
+                [btn setTitle:[NSString stringWithFormat:@"获取验证码"] forState:UIControlStateNormal];
+                btn.userInteractionEnabled = YES;
+                second = timeCount;
+                dispatch_cancel(timer);
+            } else {
+                second--;
+                [btn setTitle:[NSString stringWithFormat:@"%ld秒后获取",second] forState:UIControlStateNormal];
+            }
+        });
+    });
+    dispatch_resume(timer);
+}
 
 @end

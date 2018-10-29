@@ -107,6 +107,11 @@
     if ([SGConfig shareInstance].backImageName) {
         [self addBackButton:[SGConfig shareInstance].backImageName];
     }
+    if ([SGConfig shareInstance].navBgImg) {
+        UIImage * image = [[UIImage imageNamed:[SGConfig shareInstance].navBgImg]
+                           resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch];
+        [self.navigationController.navigationBar setBackgroundImage:image forBarPosition:UIBarPositionTopAttached barMetrics:UIBarMetricsDefault];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -116,6 +121,7 @@
         [self NavgationBarLineHidden:YES];
     }
 }
+
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     // 在该控制器消失前，恢复黑线显示

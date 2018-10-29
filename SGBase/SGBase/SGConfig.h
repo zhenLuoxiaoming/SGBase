@@ -32,4 +32,7 @@
  */
 @property (nonatomic,assign) BOOL hideNavLine;
 
+/** 导航背景图片*/
+@property (copy, nonatomic) NSString *navBgImg;
+
 @end
