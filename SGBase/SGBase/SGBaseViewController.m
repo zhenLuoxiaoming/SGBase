@@ -2,7 +2,7 @@
 //  SGBaseViewController.m
 //  SGFreamwoke
 //
-//  Created by 罗晓明 on 2018/8/28.
+//  Created by Rowling on 2018/8/28.
 //  Copyright © 2018年 Rowling. All rights reserved.
 //
 
@@ -10,11 +10,8 @@
 #import "SGBaseMacro.h"
 #import "UIView+SGExtension.h"
 #import "SGConfig.h"
-#import "SGNoDataView.h"
 
 @interface SGBaseViewController ()
-
-@property (weak, nonatomic) SGNoDataView *noDataView;;
 
 @end
 
@@ -206,37 +203,6 @@
 
 -(void)dealloc {
     NSLog(@"[%@ is dealloced]",NSStringFromClass([self class]));
-}
-
-- (void)showNoDataView:(NSString *)imgName remindStr:(NSString *)remindStr addView:(UIView *)superView{
-    CGRect rect             = superView == nil ? self.view.bounds : CGRectMake(0, 0, superView.sgWidth, superView.sgHeight);
-    SGNoDataView *noData    = [[SGNoDataView alloc] initWithFrame:rect imgName:imgName remindStr:remindStr isShowBtn:NO];
-    _noDataView             = noData;
-    if (superView) {
-        [superView addSubview:noData];
-    }else{
-        [self.view addSubview:noData];
-    }
-}
-
-- (void)showErrorMessage:(NSString *)imgName viewframe:(CGRect)frame addView:(UIView *)view retryBlock:(void (^)(void))retry{
-    CGRect viewRect         = frame.size.width==0 ? frame : self.view.bounds;
-    SGNoDataView *noData    = [[SGNoDataView alloc] initWithFrame:viewRect imgName:imgName remindStr:@"网络不给力，检查网络再试试" isShowBtn:YES];
-    _noDataView             = noData;
-    noData.ButtonClickBlock = ^{
-        if (retry) {
-            retry();
-        }
-    };
-    if (view) {
-        [view addSubview:noData];
-    }else{
-        [self.view addSubview:noData];
-    }
-}
-
-- (void)removeNoDataView{
-    [_noDataView removeFromSuperview];
 }
 
 @end

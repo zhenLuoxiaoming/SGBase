@@ -2,7 +2,7 @@
 //  SGBaseViewController.h
 //  SGFreamwoke
 //
-//  Created by 罗晓明 on 2018/8/28.
+//  Created by Rowling on 2018/8/28.
 //  Copyright © 2018年 Rowling. All rights reserved.
 //
 
@@ -78,30 +78,5 @@
  * 注:如果需要在pop到上一级控制器的时候做某些操作可以在子类当中重写该方法。
  */
 -(void)goback;
-
-/**
- * 显示无数据提示
- *
- * @param imgName 提示图片名字
- * @param remindStr 提示文字
- * @param superView 父视图，默认加在 SGBaseViewController 里
- */
-- (void)showNoDataView:(NSString *)imgName remindStr:(NSString *)remindStr addView:(UIView *)superView;
-
-/**
- *  显示请求失败提示
- *
- * @param imgName 图片名字
- * @param frame view大小
- * @param view 父视图，默认加在 SGBaseViewController 里
- * @param retry     点击重试按钮回调
- */
-- (void)showErrorMessage:(NSString *)imgName viewframe:(CGRect)frame addView:(UIView *)view
-              retryBlock:(void (^)(void))retry;
-
-/**
- * 移除无数据(请求失败)提示
- */
-- (void)removeNoDataView;
 
 @end

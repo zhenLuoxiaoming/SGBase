@@ -2,7 +2,7 @@
 //  SGAppHelper.m
 //  SGFreamwoke
 //
-//  Created by 罗晓明 on 2018/8/28.
+//  Created by Rowling on 2018/8/28.
 //  Copyright © 2018年 Rowling. All rights reserved.
 //
 
@@ -361,6 +361,16 @@
     NSDateComponents *components = [calendar components:NSCalendarUnitWeekday fromDate:inputDate];
     NSString *weekStr = [weekday objectAtIndex:components.weekday];
     return weekStr;
+}
+
+#pragma mark - 设置某个视图某些角圆角
++ (CAShapeLayer *)setFillet:(UIView *)view withByRoundingCorners:(UIRectCorner)corners withReadii:(CGFloat)num{
+    CGFloat readii = num==0 ? view.frame.size.height/2 : num;
+    UIBezierPath *maskPath  = [UIBezierPath bezierPathWithRoundedRect:view.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(readii,readii)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame         = view.bounds;
+    maskLayer.path          = maskPath.CGPath;
+    return maskLayer;
 }
 
 #pragma mark - 判断输入价格是否合法

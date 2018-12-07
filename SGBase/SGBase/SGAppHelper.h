@@ -2,19 +2,19 @@
 //  SGAppHelper.h
 //  SGFreamwoke
 //
-//  Created by 罗晓明 on 2018/8/28.
+//  Created by Rowling on 2018/8/28.
 //  Copyright © 2018年 Rowling. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface SGAppHelper : NSObject
-/*
+/**
  * 当前时间戳
  **/
 + (long long)currentTime;
 
-/*
+/**
  * 将view的内容生成一张图片
  **/
 +(UIImage *)imageWithCaputureView:(UIView *)view;
@@ -29,12 +29,12 @@
  */
 +(UIImage *)litleImage:(UIImage *)myimage;
 
-/*
+/**
  * 生成二维码
  **/
 +(UIImage *)QRcodeWithStr:(NSString *)str;
 
-/*
+/**
  * json字符串转字典
  **/
 +(NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
@@ -59,13 +59,13 @@
  */
 + (void)callPhoneStr:(NSString*)phoneStr  withVC:(UIViewController *)selfvc;
 
-/*
+/**
  * 当前设备型号
  **/
 + (NSString *)getCurrentDeviceModel;
 
 /****************************************时间相关*******************************************/
-/*
+/**
  * 时间戳转时间字符串(秒)
  **/
 +(NSString *)TimeStampFromStr:(long long)stamp;
@@ -80,7 +80,7 @@
  */
 +(NSString *)TimeStampFromStrMS:(long long)stamp FormaterStr:(NSString *)formaterStr;
 
-/*
+/**
  * 距离现在的时间
  **/
 +(NSString *)dateFormNow:(NSString *)dateStr;
@@ -94,6 +94,14 @@
  * 星期几
  */
 + (NSString*)weekdayStringFromDate:(NSDate*)inputDate;
+
+/**
+ 设置某个视图某些角圆角
+ @param view 视图
+ @param corners 需要设置的圆角
+ @param num 圆角度数，传0取view高度一半
+ */
++ (CAShapeLayer *)setFillet:(UIView *)view withByRoundingCorners:(UIRectCorner)corners withReadii:(CGFloat)num;
 
 /**
  判断输入价格是否合法
