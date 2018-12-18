@@ -69,7 +69,7 @@ static NSMutableArray *tasks;
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", urlString, params, responseObjectDict);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         SGLog(@"\nURL:%@ PARAMETRS:%@ \nERROR:%@",urlString, params, error);
-        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
+        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?[SGBaseNetConfig shareInstance].requestErrorString:@"请求失败", 1);
         [[self tasks] removeObject:sessionTask];
     }];
     if (sessionTask){
@@ -102,7 +102,7 @@ static NSMutableArray *tasks;
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, error);
-        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
+        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?[SGBaseNetConfig shareInstance].requestErrorString:@"请求失败", 1);
         [[self tasks] removeObject:sessionTask];
     }];
     if (sessionTask){
@@ -130,7 +130,7 @@ static NSMutableArray *tasks;
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, error);
-        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
+        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?[SGBaseNetConfig shareInstance].requestErrorString:@"请求失败", 1);
         [[self tasks] removeObject:sessionTask];
     }];
     if (sessionTask){
@@ -158,7 +158,7 @@ static NSMutableArray *tasks;
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, responseObjectDict);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, params, error);
-        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
+        complete(error, [SGBaseNetConfig shareInstance].requestErrorString?[SGBaseNetConfig shareInstance].requestErrorString:@"请求失败", 1);
         [[self tasks] removeObject:sessionTask];
     }];
     if (sessionTask){
@@ -255,7 +255,7 @@ static NSMutableArray *tasks;
             SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, body, responseObjectDict);
         } else {
             SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, body, error);
-            complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
+            complete(error, [SGBaseNetConfig shareInstance].requestErrorString?[SGBaseNetConfig shareInstance].requestErrorString:@"请求失败", 1);
             [[self tasks] removeObject:sessionTask];
         }
         [[self tasks] removeObject:sessionTask];
@@ -308,7 +308,7 @@ static NSMutableArray *tasks;
             SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, body, responseObjectDict);
         } else {
             SGLog(@"《== URL:%@ PARAMETRS:%@ \nRESPONSE:%@ ==》", url, body, error);
-            complete(error, [SGBaseNetConfig shareInstance].requestErrorString?@"请求失败":[SGBaseNetConfig shareInstance].requestErrorString, 1);
+            complete(error, [SGBaseNetConfig shareInstance].requestErrorString?[SGBaseNetConfig shareInstance].requestErrorString:@"请求失败", 1);
             [[self tasks] removeObject:sessionTask];
         }
         [[self tasks] removeObject:sessionTask];
