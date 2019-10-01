@@ -10,8 +10,8 @@
 
 @interface UIImage (SGExtension)
 
-/**
- * 根据颜色生成图片
- */
-+ (nullable UIImage *)imageWithColor:(UIColor *)color;
+/** 根据颜色生成图片*/
++ (nullable UIImage *)imageWithColor:(UIColor *_Nonnull)color;
+
+
 @end

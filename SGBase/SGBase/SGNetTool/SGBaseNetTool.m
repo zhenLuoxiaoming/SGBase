@@ -167,7 +167,7 @@ static NSMutableArray *tasks;
     return sessionTask;
 }
 
-+(NSURLSessionTask *)startMultiPartUploadTaskWithURL:(NSString *)url
++ (NSURLSessionTask *)startMultiPartUploadTaskWithURL:(NSString *)url
                                          imagesArray:(NSArray *)images
                                    parameterOfimages:(NSString *)parameter
                                       parametersDict:(NSDictionary *)parameters
@@ -215,7 +215,7 @@ static NSMutableArray *tasks;
     return task;
 }
 
-+(id)PostParametersInBodyWithUrl:(NSString *)url param:(NSDictionary *)param body:(id)body complete:(void (^)(id, NSString *, NSInteger))complete {
++ (id)PostParametersInBodyWithUrl:(NSString *)url param:(NSDictionary *)param body:(id)body complete:(void (^)(id, NSString *, NSInteger))complete {
     NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
     //如果你不需要将通过body传 那就将参数放入parameters里面
     __block NSString * paramStr = @"";
@@ -260,8 +260,7 @@ static NSMutableArray *tasks;
         }
         [[self tasks] removeObject:sessionTask];
     }];
-    if (sessionTask)
-    {
+    if (sessionTask){
         [[self tasks] addObject:sessionTask];
     }
     [sessionTask resume];
@@ -313,8 +312,7 @@ static NSMutableArray *tasks;
         }
         [[self tasks] removeObject:sessionTask];
     }];
-    if (sessionTask)
-    {
+    if (sessionTask){
         [[self tasks] addObject:sessionTask];
     }
     [sessionTask resume];

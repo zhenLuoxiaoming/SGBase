@@ -67,6 +67,14 @@ static const void *sgPlaceHolderKey;
 -(void)setPlaceholder:(NSString *)placeholder{
     self.sgPlaceHolder = placeholder;
 }
+- (NSInteger)maxLength{
+    return self.maxLength;
+}
+- (void)setMaxLength:(NSInteger)maxLength{
+    self.maxLength = maxLength;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextViewText) name:UITextViewTextDidChangeNotification object:self];
+}
+
 #pragma mark - update
 - (void)updatePlaceHolder{
     if (self.text.length) {
@@ -78,6 +86,12 @@ static const void *sgPlaceHolderKey;
     self.sgPlaceHolderLabel.text = self.sgPlaceHolder;
     [self insertSubview:self.sgPlaceHolderLabel atIndex:0];
 }
+- (void)updateTextViewText{
+    if (self.text.length == self.maxLength) {
+        self.text = [self.text substringToIndex:self.maxLength];
+    }
+}
+
 #pragma mark - lazzing
 -(UILabel *)sgPlaceHolderLabel{
     UILabel *placeHolderLab = objc_getAssociatedObject(self, @selector(sgPlaceHolderLabel));

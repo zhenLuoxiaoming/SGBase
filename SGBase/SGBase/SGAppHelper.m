@@ -23,20 +23,15 @@
 }
 
 #pragma -mark:通过一个View将其内容生成图片
-+(UIImage *)imageWithCaputureView:(UIView *)view
-{
++(UIImage *)imageWithCaputureView:(UIView *)view{
     // 开启位图上下文
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
-    
     // 获取上下文
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
     // 把控件上的图层渲染到上下文,layer只能渲染
     [view.layer renderInContext:ctx];
-    
     // 生成一张图片
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
     // 关闭上下文
     UIGraphicsEndImageContext();
     return image;
@@ -54,8 +49,7 @@
 }
 
 #pragma -mark: 压缩图片
-+(UIImage *)litleImage:(UIImage *)myimage
-{
++(UIImage *)litleImage:(UIImage *)myimage{
     NSData *data=UIImageJPEGRepresentation(myimage, 1.0);
     if (data.length>100*1024) {
         if (data.length>1024*1024) {//1M以及以上
@@ -107,8 +101,7 @@
 }
 
 #pragma -mark:字典转json字符串
-+ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString
-{
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString{
     if (jsonString == nil) {
         return nil;
     }
@@ -117,8 +110,7 @@
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                         options:NSJSONReadingMutableContainers
                                                           error:&err];
-    if(err)
-    {
+    if(err){
         NSLog(@"json解析失败：%@",err);
         return nil;
     }
@@ -126,8 +118,7 @@
 }
 
 #pragma -mark:数组转json
-+(NSString *)arrayToJSONString:(NSArray *)array
-{
++(NSString *)arrayToJSONString:(NSArray *)array{
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
@@ -144,8 +135,7 @@
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                         options:NSJSONReadingMutableContainers
                                                           error:&err];
-    if(err)
-    {
+    if(err){
         NSLog(@"json解析失败：%@",err);
         return nil;
     }
@@ -163,9 +153,7 @@
 #pragma -mark:打电话
 + (void)callPhoneStr:(NSString*)phoneStr  withVC:(UIViewController *)selfvc{
     NSString *str2 = [[UIDevice currentDevice] systemVersion];
-    
-    if ([str2 compare:@"10.2" options:NSNumericSearch] == NSOrderedDescending || [str2 compare:@"10.2" options:NSNumericSearch] == NSOrderedSame)
-    {
+    if ([str2 compare:@"10.2" options:NSNumericSearch] == NSOrderedDescending || [str2 compare:@"10.2" options:NSNumericSearch] == NSOrderedSame){
         NSLog(@">=10.2");
         NSString* PhoneStr = [NSString stringWithFormat:@"tel://%@",phoneStr];
         if ([PhoneStr hasPrefix:@"sms:"] || [PhoneStr hasPrefix:@"tel:"]) {
@@ -206,8 +194,7 @@
 }
 
 #pragma -mark:当前设备型号
-+ (NSString *)getCurrentDeviceModel
-{
++ (NSString *)getCurrentDeviceModel{
     int mib[2];
     size_t len;
     char *machine;
@@ -403,7 +390,7 @@
         }
     }
     NSArray *array = [textFieldText componentsSeparatedByString:@"."];
-    NSInteger count = [array count] ;
+    NSInteger count = [array count];
     //小数点只能有一个
     if (count>1&&[number isEqualToString:@"."]) {
         return NO;

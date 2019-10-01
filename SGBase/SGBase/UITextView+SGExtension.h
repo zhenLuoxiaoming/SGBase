@@ -21,4 +21,10 @@
  *  placeHolder颜色
  */
 @property (nonatomic, strong) UIColor *sgPlaceHolderColor;
+
+/**
+ *  最多字数
+ */
+@property (assign, nonatomic) NSInteger  maxLength;
+
 @end
